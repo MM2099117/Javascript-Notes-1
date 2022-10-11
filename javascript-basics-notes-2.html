@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Basics Notes 2</title>
+</head>
+<body>
+    <button>Press Me!</button>
+
+    <script>
+        
+        const string = "The revolution will not be televised.";
+        console.log(string);
+        
+        const escapeString = "I\'ve got no right to take my place.";
+        console.log(string);
+        //Output: I've got no right to take my place.
+
+        const firstName = "Mark";
+        const secondName = "McNulty";
+        console.log(firstName + " " + secondName);
+
+        const name = "Chris";
+        const greeting = `Hello, ${name}`;
+        console.log(greeting);
+        //backtick character is -not- an apostrophe.
+
+        const fullName = `${firstName}${secondName}`;
+        console.log(fullName);
+        
+        //defines the button value as the value attained from the button element on the document
+        const button = document.querySelector("button");
+        
+        function greet(){
+            //prompt gets input from the user in a browser window
+            const greetName = prompt("What is your name?");
+            alert(`Hello ${greetName}, nice to meet you.`);
+        }
+
+        button.addEventListener("click", greet);
+
+        //JS expressions can be defined within strings using concatentation
+        const song = "Love, Ire and Song";
+        const score = 9;
+        const highestScore = 10;
+        //the \n value creates a new line in a string.
+        const output = `${song} is Frank Turner's best work.\nI give it a score of ${(score/highestScore) * 100}%`;
+        console.log(output);
+
+        let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        //returns the length of a string
+        let length = txt.length;
+
+        //a string is an ARRAY of CHARACTERS, Mark. It starts at 0. You put 7,10 down here. Get it together!
+        let str = "Mark, Emma, Toby";
+        let part = str.slice(6,10);
+        console.log(part);
+
+        let subPart = str.substring(6,10);
+        console.log(subPart);
+
+        //replace matches only first 
+        let baseText = "Please visit House Swann!";
+        let newText = baseText.replace("House Swann!", "The Oblivion Academy!");
+        console.log(newText);
+        
+        /*regex examples:
+            /i = replaces case sensitive
+            /g = replaces all matches in the string  
+        */
+
+        let newText2 = newText.toUpperCase();
+        console.log(newText2);
+
+        let padText = "5";
+        let padded = padText.padStart(4,"x");
+        console.log(padded);    
+    </script>
+</body>
+</html>
